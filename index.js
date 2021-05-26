@@ -1,3 +1,11 @@
+const express = require("express")
+
+const app = express()
+
+app.set((req, res) => {
+  res.send("Hello World")
+})
+
 function parseNumberArgs(arg) {
   const number = parseFloat(arg)
   if (isNaN(number)) {
@@ -47,3 +55,11 @@ switch (operation) {
       'I cannot calculate that, please type either "sum" (to calculate the sum) or "avg" (To calculate the Average)'
     )
 }
+
+const PORT = 3000
+
+app.listen(PORT, () => {
+  console.log("App is running in port ", PORT)
+})
+
+console.log("This is log to Debugger")
