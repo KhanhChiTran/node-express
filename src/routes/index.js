@@ -2,16 +2,21 @@ const express = require("express")
 const path = require("path")
 const router = express.Router()
 
+const accountController = require("../controllers")
+
 let isLoggin = false
 let username = null
 
-router.get("/", (req, res) => {
-  res.render("home")
-})
+router.get("/", accountController.index)
 
-router.get("/login", (req, res) => {
-  res.render("login", { error: "" })
-})
+router.get(
+  "/login",
+  (req, res, next) => {
+    accountController.error = ""
+    next()
+  },
+  accountController.login
+)
 
 router.get("/profile", (req, res) => {
   console.log(req)
