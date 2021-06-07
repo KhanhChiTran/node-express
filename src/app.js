@@ -6,7 +6,7 @@ const ejs = require("ejs")
 const router = require("./routes")
 
 app.set("view engine", "ejs")
-app.set("views", path.join(__dirname, "views"))
+app.set("views", path.resolve(__dirname, "views"))
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
