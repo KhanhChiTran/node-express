@@ -1,7 +1,12 @@
 let { isLoggin, username } = require("../modals/mockData")
 
-// let isLoggin = false
-// let username = ""
+const path = require("path")
+const low = require("lowdb")
+const FileSync = require("lowdb/adapters/FileSync")
+
+const adapter = new FileSync(path.resolve("src", "modals", "myDB.json"))
+
+const db = low(adapter)
 
 class AccountControler {
   index(req, res, next) {
@@ -30,10 +35,21 @@ class AccountControler {
     res.render("profile", { username })
   }
   getRegister(req, res) {
+    const x = db.get("users").find({ name: "teddy" }).value()
+    console.log(x)
+
+    // db.get("posts").push({ id: 1, title: "Hello lowDB" }).write()
+    // db.set("user.name", "chitran").write()
+    // console.log(db)
+    // db.set("users.name", "hello i am i")
+    // console.log("hello register get")
     res.render("register")
   }
   postRegister(req, res) {
-    res.send("hehe")
+    const { name, password } = req.body
+
+    db.get("users").push({ id: 1, name, password }).write()
+    res.redirect("home")
   }
 }
 

@@ -1,4 +1,15 @@
 {
-  "posts": [],
-  "user": {}
+  "users": [
+    {
+      "id": 1,
+      "name": "root",
+      "password": "123456"
+    },
+    {
+      "id": 1,
+      "name": "teddy",
+      "password": "haiaiaia"
+    }
+  ],
+  "posts": []
 }

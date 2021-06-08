@@ -13,5 +13,5 @@ router.post("/login", accountController.postLogin)
 router.get("/profile", accountController.getProfile)
 
 router.get("/register", accountController.getRegister)
-router.post("/register", (req, res) => {})
+router.post("/register", accountController.postRegister)
 module.exports = router

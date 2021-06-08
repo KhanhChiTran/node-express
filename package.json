@@ -6,7 +6,7 @@
 
   "scripts": {
     "start": "nodemon --inspect src/app.js",
-    "get:data" : "node src/modals/dataSeeder.js" ,
+    "get:data" : "node src/modals/defaultData.js" ,
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

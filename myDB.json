@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Hello lowDB"
+    }
+  ],
+  "users": [
+    {
+      "age": 15
+    },
+    {
+      "age": 15
+    },
+    {
+      "age": 15
+    },
+    {
+      "age": 15
+    }
+  ],
+  "user": {
+    "name": "chitran"
+  }
+}
