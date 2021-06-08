@@ -1,4 +1,4 @@
-const { isLoggin, username } = require("../modals/mockData")
+let { isLoggin, username } = require("../modals/mockData")
 
 // let isLoggin = false
 // let username = ""
@@ -7,13 +7,15 @@ class AccountControler {
   index(req, res, next) {
     res.render("home")
   }
-  getlogin(req, res, next) {
+  getLogin(req, res, next) {
+    // res.status(200).json({ name: "hello" })
     res.render("login", { error: "" })
   }
-  postlogin(req, res, next) {
+  postLogin(req, res, next) {
+    console.log(req.body)
     if (req.body.name === "admin" && req.body.password === "123456") {
       isLoggin = true
-      username = req.body.name
+      username = req.body.username
       res.redirect("profile")
     } else {
       res.render("login", {
@@ -26,6 +28,12 @@ class AccountControler {
       res.redirect("login")
     }
     res.render("profile", { username })
+  }
+  getRegister(req, res) {
+    res.render("register")
+  }
+  postRegister(req, res) {
+    res.send("hehe")
   }
 }
 

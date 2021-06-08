@@ -6,14 +6,12 @@ const accountController = require("../controllers")
 
 router.get("/", accountController.index)
 
-router.get("/login", accountController.getlogin)
+router.get("/login", accountController.getLogin)
 
-router.post("/login", accountController.postlogin)
+router.post("/login", accountController.postLogin)
 
 router.get("/profile", accountController.getProfile)
 
-router.get("/register", (req, res) => {
-  res.render("register")
-})
+router.get("/register", accountController.getRegister)
 router.post("/register", (req, res) => {})
 module.exports = router
